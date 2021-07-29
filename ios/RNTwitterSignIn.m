@@ -43,7 +43,7 @@ RCT_EXPORT_METHOD(logIn: (RCTPromiseResolveBlock)resolve
                                        @"userName":session.userName};
                 if(authNotResolved){
                     resolve(body);
-                    authNotResolved = false;
+                    // authNotResolved = false;
                 }
             }];
         } else {
