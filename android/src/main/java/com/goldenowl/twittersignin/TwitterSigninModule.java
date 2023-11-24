@@ -78,11 +78,9 @@ public class TwitterSigninModule extends ReactContextBaseJavaModule implements A
 
                     @Override
                     public void failure(TwitterException exception) {
-                        map.putString("email", "COULD_NOT_FETCH");
-                        promise.reject(
-                                "COULD_NOT_FETCH",
-                                map.toString(),
-                                new Exception("Failed to obtain email", exception));
+                        //兼容新版本twitter获取不到邮箱导致抛出异常的问题
+                     promise.resolve(map);
+
                     }
                 });
             }
